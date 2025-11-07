@@ -40,7 +40,7 @@ export default function PolaroidPhoto({ src, name, rotation, index, id }: Polaro
         />
 
         <p
-          className="text-center text-sm text-gray-700 mt-2 font-title"
+          className="text-center text-lg font-bold  text-gray-700 mt-2 font-title"
           style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
         >
           {name}

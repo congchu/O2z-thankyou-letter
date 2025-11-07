@@ -22,7 +22,7 @@ export default function RollingPaperPage() {
     return noteMap[id] || [];
   }, [id]);
   return (
-    <div className="min-h-screen  py-6 sm:py-12 px-4">
+    <div className="min-h-screen  pt-6  pb-20 px-4 break-keep">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-start mb-6 sm:mb-8">
           <button
@@ -32,8 +32,9 @@ export default function RollingPaperPage() {
           >
             ←
           </button>
+          {/* 뜨어쓰기 줄내림 */}
           <h1
-            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center text-gray-700"
+            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center text-gray-700 break-keep"
             style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
           >
             {nameMap[id]?.title || "롤링페이퍼"}
@@ -51,6 +52,8 @@ export default function RollingPaperPage() {
           ))}
         </div>
       </div>
+      {/*  */}
+      <div className="text-2xl  text-center mt-10">🫧우리는 뽀글뽀글 102기 💛</div>
     </div>
   );
 }

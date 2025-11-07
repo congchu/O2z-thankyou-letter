@@ -1,6 +1,6 @@
 "use client";
 
-import { Note } from "@/app/data/data";
+import { Note } from "../data/messages";
 
 interface NoteItemProps {
   note: Note;
@@ -34,9 +34,9 @@ export default function NoteItem({ note, index }: NoteItemProps) {
         e.currentTarget.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
       }}
     >
-      <p className="text-md sm:text-base leading-5 mb-3">{note.message}</p>
+      <p className="text-lg leading-5 mb-3">{note.message}</p>
       <p
-        className="text-xs sm:text-sm font-semibold text-gray-500 text-right"
+        className="text-sm sm:text-sm font-semibold text-gray-500 text-right"
         style={{ fontFamily: "OngleipParkDahyeon, sans-serif" }}
       >
         - {note.sender}
