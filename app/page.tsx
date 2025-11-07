@@ -8,45 +8,41 @@ export default function Home() {
   const [showPhotos, setShowPhotos] = useState(false);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-6xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div
+      className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"
+      style={{
+        backgroundImage: "url('/images/background.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <main className="flex min-h-screen w-full max-w-6xl flex-col items-center justify-between md:py-32 py-16 md:px-16 px-4 sm:items-start">
         <div className={showPhotos ? "hidden" : "flex flex-col items-center justify-between "}>
           <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-            <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-              우리의 리듬을 바꾼 네가지 컬러, 그리고 열한빛깔 무재개
+            <h1
+              className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50 whitespace-pre-line"
+              style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
+            >
+              {`🫧뽀글뽀글 자라는🫧
+              102기에서 왔습니다 💛`}
             </h1>
-            <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-              Looking for a starting point or more instructions? Head over to{" "}
-              <a
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="font-medium text-zinc-950 dark:text-zinc-50"
-              >
-                Templates
-              </a>{" "}
-              or the{" "}
-              <a
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                className="font-medium text-zinc-950 dark:text-zinc-50"
-              >
-                Learning
-              </a>{" "}
-              center.
+            <p
+              className="max-w-md text-lg  text-zinc-600 dark:text-zinc-400 whitespace-pre-line"
+              style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
+            >
+              {`우리에게 스윙을 알려주고, 연습을 포기하지 않게 도와주신 선생님과 도우미님들께 마음을 모아 전합니다. 
+              오늘도 우리가 춤출 수 있는 건 여러분 덕분이에요.💚`}
             </p>
           </div>
 
           <Image
+            onClick={() => setShowPhotos(true)}
             src="/images/train.png"
             alt="기차"
-            width={500}
-            height={500}
-            className="w-full train-sway"
+            width={320}
+            height={320}
+            className="w-full train-sway cursor-alias"
           />
-          <button
-            onClick={() => setShowPhotos(true)}
-            className="flex h-12 w-full items-center justify-center rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-          >
-            다음으로
-          </button>
         </div>
         <div className={showPhotos ? "w-full" : "hidden"}>
           <PhotoGallery />

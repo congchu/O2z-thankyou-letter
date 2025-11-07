@@ -13,7 +13,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`antialiased`}>{children}</body>
+      {/* background-image: url("/images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; */}
+      <body
+        className={`antialiased`}
+        style={{
+          backgroundImage: "url('/images/background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

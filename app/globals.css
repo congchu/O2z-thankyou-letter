@@ -16,6 +16,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "SseulroneNetHandwrittenFont";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2402_1@1.0/SSRONETHandwritten.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -31,14 +39,7 @@
 body {
   color: var(--foreground);
   text-align: center;
-}
 
-main {
-  background-image: url("/images/background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -78,4 +79,69 @@ main {
 .animate-fade-in {
   animation: fade-in 0.6s ease-out forwards;
   opacity: 0;
+}
+
+/* 기차 흔들거리는 애니메이션 */
+@keyframes train-sway {
+  0% {
+    transform: rotate(-2deg) translateX(-5px);
+  }
+  25% {
+    transform: rotate(2deg) translateX(5px);
+  }
+  50% {
+    transform: rotate(-1.5deg) translateX(-3px);
+  }
+  75% {
+    transform: rotate(1.5deg) translateX(3px);
+  }
+  100% {
+    transform: rotate(-2deg) translateX(-5px);
+  }
+}
+
+.train-sway {
+  animation: train-sway 2s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* 화려한 제목 효과 */
+.fancy-title {
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+  text-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  position: relative;
+}
+
+.fancy-title::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #ff6b6b);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease infinite;
+  filter: blur(10px);
+  opacity: 0.5;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

@@ -20,21 +20,21 @@ export const positions: { x: number; y: number }[] = [
   { x: 80, y: 30 },
 ];
 
-export const nameMap: { [key: string]: string } = {
-  yunsul: "윤슬쌤",
-  ken: "켄쌤",
-  goyo: "고요쌤",
-  juice: "쥬스쌤",
-  carol: "캐롤돔",
-  dudu: "듀듀돔",
-  yugwang: "유광돔",
-  norae: "노래돔",
-  bella: "벨라돔",
-  jen: "젠돔",
-  mincho: "민트초코돔",
-  sonya: "쏘냐돔",
-  osori: "오소리돔",
-  winterbear: "겨울곰돔",
+export const nameMap: { [key: string]: { name: string; title: string } } = {
+  yunsul: { name: "윤슬쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  ken: { name: "켄쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  goyo: { name: "고요쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  juice: { name: "쥬스쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  carol: { name: "캐롤돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  dudu: { name: "듀듀돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  yugwang: { name: "유광돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  norae: { name: "노래돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  bella: { name: "벨라돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  jen: { name: "젠돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  mincho: { name: "민트초코돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  sonya: { name: "쏘냐돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  osori: { name: "오소리돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  winterbear: { name: "겨울곰돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
 };
 
 export const yunsul: Note[] = [
