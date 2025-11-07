@@ -55,7 +55,7 @@ export const doms = [
   },
   {
     id: "yugwang",
-    src: "/images/photos/3_유광돔.gif",
+    src: "/images/photos/3_유광돔.jpg",
     name: "유광돔",
     title: "유광돔",
   },
@@ -80,7 +80,7 @@ export const doms = [
   },
   {
     id: "sonya",
-    src: "/images/photos/8_쏘냐돔.gif",
+    src: "/images/photos/8_쏘냐돔.jpg",
     name: "쏘냐돔",
     title: "쏘냐돔",
   },

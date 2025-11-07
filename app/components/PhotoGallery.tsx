@@ -26,7 +26,9 @@ export default function PhotoGallery() {
         ))}
       </div>
       <div>
-        <h2 className="text-2xl font-bold">열한빛깔 무지개 돔즈</h2>
+        <h2 className="text-2xl font-bold" style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}>
+          🌈 열개의 빛 무지개 돔즈 🌈
+        </h2>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center py-12">
           {doms.map((photo, index) => (
             <PolaroidPhoto
