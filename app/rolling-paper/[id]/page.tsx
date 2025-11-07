@@ -1,8 +1,9 @@
 "use client";
 
-import { nameMap, noteMap, reverseNameMap, Note } from "@/app/data/message";
+import { nameMap, noteMap, reverseNameMap } from "@/app/data/data";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useMemo } from "react";
+import NoteItem from "@/app/components/NoteItem";
 
 export default function RollingPaperPage() {
   const params = useParams();
@@ -21,7 +22,7 @@ export default function RollingPaperPage() {
     return noteMap[id] || [];
   }, [id]);
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-yellow-50 to-blue-50 py-6 sm:py-12 px-4">
+    <div className="min-h-screen  py-6 sm:py-12 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-start mb-6 sm:mb-8">
           <button
@@ -32,7 +33,7 @@ export default function RollingPaperPage() {
             ←
           </button>
           <h1
-            className="fancy-title text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center"
+            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center text-gray-700"
             style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
           >
             {nameMap[id]?.title || "롤링페이퍼"}
@@ -42,41 +43,11 @@ export default function RollingPaperPage() {
 
         {/* Grid 레이아웃 - 모든 화면 크기 */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
-          style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6"
+          style={{ fontFamily: "OngleipParkDahyeon, sans-serif" }}
         >
-          {notes.map((note) => (
-            <div
-              key={note.id}
-              className="note-item"
-              style={{
-                transform: `rotate(${note.rotation}deg)`,
-                backgroundColor: note.color,
-                padding: "16px",
-                borderRadius: "8px",
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                cursor: "pointer",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = `rotate(0deg) scale(1.02)`;
-                e.currentTarget.style.zIndex = "10";
-                e.currentTarget.style.boxShadow = "0 8px 12px rgba(0, 0, 0, 0.2)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = `rotate(${note.rotation}deg) scale(1)`;
-                e.currentTarget.style.zIndex = "1";
-                e.currentTarget.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)";
-              }}
-            >
-              <p className="text-sm sm:text-base leading-relaxed mb-3">{note.message}</p>
-              <p
-                className="text-xs sm:text-sm font-semibold text-gray-500 text-right"
-                style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
-              >
-                - {note.sender}
-              </p>
-            </div>
+          {notes.map((note, index) => (
+            <NoteItem key={note.id} note={note} index={index} />
           ))}
         </div>
       </div>

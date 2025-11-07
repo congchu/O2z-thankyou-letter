@@ -15,7 +15,8 @@ export default function PolaroidPhoto({ src, name, rotation, index, id }: Polaro
   const router = useRouter();
 
   const handleClick = () => {
-    router.push(`/rolling-paper/${id}`);
+    // queryParams로 이름을 포함하여 라우팅
+    router.push(`/rolling-paper/${id}?name=${encodeURIComponent(name)}`);
   };
 
   return (

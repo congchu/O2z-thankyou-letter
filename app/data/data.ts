@@ -2,9 +2,7 @@ export interface Note {
   id: number;
   sender: string;
   message: string;
-  color: string;
   rotation: number;
-  position: { x: number; y: number };
 }
 
 export const colors = ["#FFE5B4", "#E6E6FA", "#FFB6C1", "#B0E0E6", "#F0E68C", "#DDA0DD"];
@@ -20,56 +18,131 @@ export const positions: { x: number; y: number }[] = [
   { x: 80, y: 30 },
 ];
 
-export const nameMap: { [key: string]: { name: string; title: string } } = {
-  yunsul: { name: "윤슬쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  ken: { name: "켄쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  goyo: { name: "고요쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  juice: { name: "쥬스쌤", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  carol: { name: "캐롤돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  dudu: { name: "듀듀돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  yugwang: { name: "유광돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  norae: { name: "노래돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  bella: { name: "벨라돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  jen: { name: "젠돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  mincho: { name: "민트초코돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  sonya: { name: "쏘냐돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  osori: { name: "오소리돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-  winterbear: { name: "겨울곰돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
-};
+export const teachers = [
+  {
+    id: "yunsul",
+    src: "/images/photos/1_윤슬쌤.gif",
+    name: "윤슬쌤",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "ken",
+    src: "/images/photos/2_켄쌤.gif",
+    name: "켄쌤💙",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "goyo",
+    src: "/images/photos/3_고요쌤.gif",
+    name: "고요쌤💚",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "juice",
+    src: "/images/photos/4_쥬스쌤.gif",
+    name: "쥬스쌤❤️",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+];
+
+export const doms = [
+  {
+    id: "carol",
+    src: "/images/photos/1_캐롤돔.gif",
+    name: "캐롤돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "dudu",
+    src: "/images/photos/2_듀듀돔.gif",
+    name: "듀듀돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "yugwang",
+    src: "/images/photos/3_유광돔.gif",
+    name: "유광돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "norae",
+    src: "/images/photos/4_노래돔.gif",
+    name: "노래돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "bella",
+    src: "/images/photos/5_벨라돔.gif",
+    name: "벨라돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  { id: "jen", src: "/images/photos/6_젠돔_.gif", name: "젠돔", title: "뽀글즈의 태양, 윤슬쌤 ☀️" },
+  {
+    id: "mincho",
+    src: "/images/photos/7_민초돔.gif",
+    name: "민트초코돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "sonya",
+    src: "/images/photos/8_쏘냐돔.gif",
+    name: "쏘냐돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "osori",
+    src: "/images/photos/9_오소리돔.gif",
+    name: "오소리돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+  {
+    id: "winterbear",
+    src: "/images/photos/10_겨울곰돔_.gif",
+    name: "겨울곰돔",
+    title: "뽀글즈의 태양, 윤슬쌤 ☀️",
+  },
+];
+
+// teachers와 doms에서 nameMap 생성
+export const nameMap: { [key: string]: { name: string; title: string } } = Object.fromEntries(
+  [...teachers, ...doms].map((item) => [
+    item.id,
+    { name: item.name.replace(/[💛💙💚❤️]/g, "").trim(), title: item.title },
+  ])
+);
+
+// | 용도    | 색상        | HEX       |
+// | ----- | --------- | --------- |
+// | 메인 배경 | 레몬화이트     | `#FFFDEA` |
+// | 포인트1  | 소프트 스카이블루 | `#DFF4FF` |
+// | 포인트2  | 라벤더       | `#EDE7FF` |
+// | 보조    | 페일 민트     | `#E9FFF5` |
 
 export const yunsul: Note[] = [
   {
     id: 1,
     sender: "레비나",
     message: "미소천사 윤슬쌤! 보고만 있어도 행복행복! 윤슬쌤이 우리 쌤이라 넘나 행복했어요!!!",
-    color: "#FFE5B4",
     rotation: -2,
-    position: { x: 10, y: 15 },
   },
   {
     id: 2,
     sender: "진성",
     message: "항상 열정적이고 에너지 넘치는 쌤",
-    color: "#E6E6FA",
     rotation: 3,
-    position: { x: 60, y: 20 },
   },
   {
     id: 3,
     sender: "다자",
     message: "에너지 넘치는 윤슬쌤 오래 오래 뵈어요",
-    color: "#FFB6C1",
     rotation: -1.5,
-    position: { x: 30, y: 50 },
   },
   {
     id: 4,
     sender: "칩스주니어 초이",
     message:
       "윤슬 쌤 옆에 노래돔 옆에 다정 님 땜에 왔네요 인연 참 무섭다 싶습니다 ㅋㅋㅋ 언제나 감사드려요^^",
-    color: "#B0E0E6",
     rotation: 2.5,
-    position: { x: 70, y: 60 },
   },
   {
     id: 5,
@@ -79,69 +152,53 @@ export const yunsul: Note[] = [
 항상 강사 도우미 운영진은 희생하는걸 아는 입장에서 정말 대단하고 멋있어요...
 영원한 102기 동기들 어머니 되어주시고 중심이 되어주실거같군욬ㅋㅋ
 화이팅!!! 우리 영원히 춤춰욧!!ㅋㅋ `,
-    color: "#F0E68C",
     rotation: -3,
-    position: { x: 20, y: 70 },
   },
   {
     id: 6,
     sender: "린더벅 아닌 인원이 청주에서 와서 물을 흐리지 않았을까 걱정...ㅋㅋ",
     message:
       "항상 강사 도우미 운영진은 희생하는걸 아는 입장에서 정말 대단하고 멋있어요... 영원한 102기 동기들 어머니 되어주시고 중심이 되어주실거같군욬ㅋㅋ 화이팅!!! 우리 영원히 춤춰욧!!ㅋㅋ",
-    color: "#DDA0DD",
     rotation: 1.5,
-    position: { x: 80, y: 30 },
   },
   {
     id: 7,
     sender: "라연",
     message: "김밥	따뜻한 마음으로 모두를 보살펴 주셔서 감사해요.",
-    color: "#FFE5B4",
     rotation: -2,
-    position: { x: 10, y: 15 },
   },
   {
     id: 8,
     sender: "김밥",
     message: "김밥",
-    color: "#E6E6FA",
     rotation: 3,
-    position: { x: 60, y: 20 },
   },
   {
     id: 9,
     sender: "에어",
     message:
       "언제나 긍정적인 기운으로 분위기를 만들어주셔서 감사했습니다.\n쌤의 에너지가 덕분에 늘 힘이 났어요! 🌞",
-    color: "#FFB6C1",
     rotation: -1.5,
-    position: { x: 30, y: 50 },
   },
   {
     id: 10,
     sender: "쿠",
     message: "쿠",
-    color: "#B0E0E6",
     rotation: 2.5,
-    position: { x: 70, y: 60 },
   },
   {
     id: 11,
     sender: "로다",
     message:
       "넘 사랑스런 윤슬쌤!!! 쌤의 넘치는 재치와 센스에 마음을 빼앗겨 버렸습니다😍 무한한 애정을 쏟아부어 주셔서 진심으로 감사했습니다💙 오래오래 뵙고싶어요!!!!",
-    color: "#F0E68C",
     rotation: -3,
-    position: { x: 20, y: 70 },
   },
   {
     id: 12,
     sender: "우형우",
     message:
       "자꾸 포기하려는 절 붙잡아주셔서 감사하고 너무너무 고생많으셨고 죄송하고 고생많으셨습니다 ㅜㅜ",
-    color: "#DDA0DD",
     rotation: 1.5,
-    position: { x: 80, y: 30 },
   },
   {
     id: 13,
@@ -151,34 +208,26 @@ export const yunsul: Note[] = [
 낮설고 막막헀던 서울에서의 새로운 시작 쌤 덕분에 참 행복했습니다.
 뽀그리 빠다가 되어서 예쁜 기수티 입고 하하호호 아이처럼 웃는 나날이었습니다.
 부쩍 서울로 이사가고 싶더라구요. 고맙습니다."`,
-    color: "#FFE5B4",
     rotation: -2,
-    position: { x: 10, y: 15 },
   },
   {
     id: 14,
     sender: "쬬",
     message: `에너지 넘치는 쌤의 모습을 보며 청주 왔다갔다하며 지치다가도 기운을 얻어갑니다! ㅎㅎ 여기서 기운 다 쏟아냈다고.. 그 에너지 방전되는 일 없이 린더벅 강습 이후에도 오래오래 빠에서 뵈요:)`,
-    color: "#E6E6FA",
     rotation: 3,
-    position: { x: 60, y: 20 },
   },
   {
     id: 15,
     sender: "루네이",
     message: `항상 늘 같이 응원해주시고 티칭해주셔서 책임감 강한 쌤으로 기억될게요! 앞으로 리딩 팔로잉 어떤 컨셉으로 홀딩갈지 모르니 기다려주세요ㅋㅋㅋ`,
-    color: "#FFB6C1",
     rotation: -1.5,
-    position: { x: 30, y: 50 },
   },
   {
     id: 16,
     sender: "제리",
     message: `윤슬쌤! 덕분에 스윙댄스를 즐겁고 재밌게 배웠습니다
 윤슬쌤의 활력 덕분에 저도 몸을 일으켜 스윙댄스를 추지 않았나 싶습니다 🩵`,
-    color: "#B0E0E6",
     rotation: 2.5,
-    position: { x: 70, y: 60 },
   },
 ];
 
