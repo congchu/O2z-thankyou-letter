@@ -53,7 +53,7 @@ export default function RollingPaperPage() {
         </div>
       </div>
       {/*  */}
-      <div className="text-2xl  text-center mt-10">🫧우리는 뽀글뽀글 102기 💛</div>
+      <div className="text-2xl  text-center mt-16">🫧우리는 뽀글뽀글 102기 💛</div>
     </div>
   );
 }
