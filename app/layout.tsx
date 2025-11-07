@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" style={{ colorScheme: "light" }}>
       {/* background-image: url("/images/background.jpg");
   background-size: cover;
   background-position: center;
@@ -35,6 +35,7 @@ export default function RootLayout({
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
+          colorScheme: "light",
         }}
       >
         {children}

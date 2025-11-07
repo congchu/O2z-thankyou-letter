@@ -16,7 +16,7 @@ export default function PhotosPage() {
         ←
       </button>
       <div
-        className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black"
+        className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans"
         style={{
           backgroundImage: "url('/images/background.jpg')",
           backgroundSize: "cover",

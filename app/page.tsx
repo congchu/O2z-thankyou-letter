@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div
-      className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black mx-auto"
+      className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans mx-auto"
       style={{
         backgroundImage: "url('/images/background.jpg')",
         backgroundSize: "cover",
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="flex flex-col items-center justify-between w-full">
           <div className="flex flex-col items-center gap-6 text-center ">
             <h1
-              className="text-4xl font-semibold tracking-tight text-gray-700 dark:text-zinc-50 whitespace-pre-line "
+              className="text-4xl font-semibold tracking-tight text-gray-700 whitespace-pre-line "
               style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
             >
               🫧뽀글뽀글 자라난 102기, <br />
@@ -47,7 +47,7 @@ export default function Home() {
             alt="기차"
             width={320}
             height={320}
-            className="train-sway cursor-pointer w-full max-w-[480px] mx-auto border-1 shadow-sm rounded-lg border-gray-600"
+            className="train-sway cursor-pointer w-full max-w-[480px] mx-auto border shadow-sm rounded-lg border-gray-600"
           />
         </div>
       </main>
