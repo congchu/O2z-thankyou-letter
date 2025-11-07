@@ -2,8 +2,19 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "bbogle102",
+  title: "영원한 102기 뽀글즈🫧",
   description: "뽀글 프로젝트",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "영원한 102기 뽀글즈🫧",
+    description: "뽀글 프로젝트",
+    images: "/images/102.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
