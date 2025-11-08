@@ -13,7 +13,7 @@ export default function NoteItem({ note, index }: NoteItemProps) {
 
   return (
     <div
-      className="note-item text-gray-800 text-left whitespace-pre-line"
+      className="note-item text-gray-800 text-left whitespace-pre-line h-fit"
       style={{
         transform: `rotate(${note.rotation}deg)`,
         backgroundColor: bgColor,
