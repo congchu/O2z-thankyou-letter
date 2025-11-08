@@ -34,8 +34,10 @@ body {
   color: var(--foreground);
   text-align: center;
   font-family: "SchoolSafeOuting, sans-serif";
-
   min-height: 100vh;
+}
+main {
+  font-family: "SchoolSafeOuting, sans-serif";
 }
 
 /* 폴라로이드 스타일 */

@@ -22,6 +22,7 @@ export default function NoteItem({ note, index }: NoteItemProps) {
         boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         transition: "transform 0.3s ease, box-shadow 0.3s ease",
         cursor: "pointer",
+        fontFamily: "SchoolSafeOuting, sans-serif",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = `rotate(0deg) scale(1.02)`;
@@ -35,12 +36,7 @@ export default function NoteItem({ note, index }: NoteItemProps) {
       }}
     >
       <p className="text-xl leading-6 mb-3">{note.message}</p>
-      <p
-        className="text-md font-semibold text-gray-500 text-right"
-        style={{ fontFamily: "OngleipParkDahyeon, sans-serif" }}
-      >
-        - {note.sender}
-      </p>
+      <p className="text-md font-semibold text-gray-500 text-right">- {note.sender}</p>
     </div>
   );
 }

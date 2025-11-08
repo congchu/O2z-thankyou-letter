@@ -29,13 +29,15 @@ export default function RollingPaperPage() {
   console.log(shuffledNotes);
 
   return (
-    <div className="min-h-screen  pt-6  pb-20 px-4 break-keep">
+    <div
+      className="min-h-screen  pt-6  pb-20 px-4 break-keep"
+      style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
+    >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-start mb-6 sm:mb-8">
           <button
             onClick={() => router.back()}
             className="mb-4 px-3 py-2 sm:px-4 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm sm:text-base w-fit fixed z-10"
-            style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
           >
             ←
           </button>
@@ -50,10 +52,7 @@ export default function RollingPaperPage() {
         </div>
 
         {/* Grid 레이아웃 - 모든 화면 크기 */}
-        <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6"
-          style={{ fontFamily: "OngleipParkDahyeon, sans-serif" }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6">
           {shuffledNotes.map((note, index) => (
             <NoteItem key={note.id} note={note} index={index} />
           ))}
