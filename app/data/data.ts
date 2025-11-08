@@ -1,4 +1,20 @@
-import { goyo, juice, ken, Note, yunsul } from "./messages";
+import {
+  bella,
+  carol,
+  dudu,
+  goyo,
+  gyulgom,
+  jen,
+  juice,
+  ken,
+  mincho,
+  norae,
+  Note,
+  osori,
+  sonya,
+  yugwang,
+  yunsul,
+} from "./messages";
 
 export const colors = ["#FFE5B4", "#E6E6FA", "#FFB6C1", "#B0E0E6", "#F0E68C", "#DDA0DD"];
 
@@ -111,6 +127,16 @@ export const noteMap: { [key: string]: Note[] } = {
   ken: ken,
   goyo: goyo,
   juice: juice,
+  carol: carol,
+  dudu: dudu,
+  yugwang: yugwang,
+  norae: norae,
+  bella: bella,
+  jen: jen,
+  mincho: mincho,
+  sonya: sonya,
+  osori: osori,
+  winterbear: gyulgom, // doms 배열에서 id가 "winterbear"이므로
 };
 
 // 이름으로 id를 찾기 위한 역방향 맵 (원본 name과 정리된 name 모두 포함)
