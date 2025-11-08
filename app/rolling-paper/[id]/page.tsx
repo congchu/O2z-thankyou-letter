@@ -21,20 +21,27 @@ export default function RollingPaperPage() {
   const notes = useMemo(() => {
     return noteMap[id] || [];
   }, [id]);
+
+  // note 순서 랜덤 섞끼
+  const shuffledNotes = useMemo(() => {
+    return [...notes].sort((a, b) => a.id - b.id);
+  }, [notes]);
+  console.log(shuffledNotes);
+
   return (
     <div className="min-h-screen  pt-6  pb-20 px-4 break-keep">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col items-start mb-6 sm:mb-8">
           <button
             onClick={() => router.back()}
-            className="mb-4 px-3 py-2 sm:px-4 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm sm:text-base w-fit"
+            className="mb-4 px-3 py-2 sm:px-4 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm sm:text-base w-fit fixed z-10"
             style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
           >
             ←
           </button>
           {/* 뜨어쓰기 줄내림 */}
           <h1
-            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center text-gray-700 break-keep"
+            className="text-3xl sm:text-3xl md:text-4xl font-bold mb-2 w-full text-center text-gray-700 break-keep pt-12"
             style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
           >
             {nameMap[id]?.title || "롤링페이퍼"}
@@ -47,7 +54,7 @@ export default function RollingPaperPage() {
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-6"
           style={{ fontFamily: "OngleipParkDahyeon, sans-serif" }}
         >
-          {notes.map((note, index) => (
+          {shuffledNotes.map((note, index) => (
             <NoteItem key={note.id} note={note} index={index} />
           ))}
         </div>

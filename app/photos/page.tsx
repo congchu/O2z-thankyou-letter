@@ -10,7 +10,7 @@ export default function PhotosPage() {
       {/* 뒤로가기 */}
       <button
         onClick={() => router.back()}
-        className="mb-4 px-3 py-2 sm:px-4 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm  w-fit flex justify-start"
+        className="mb-4 px-3 py-2 sm:px-4 bg-white rounded-lg shadow-md hover:bg-gray-50 transition-colors text-sm  w-fit flex justify-start fixed z-10"
         style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
       >
         ←

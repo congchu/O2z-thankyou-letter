@@ -11,7 +11,9 @@ export default function PhotoGallery() {
         className="text-3xl md:text-4xl font-bold pb-4"
         style={{ fontFamily: "SchoolSafeOuting, sans-serif" }}
       >
-        우리의 마음을 훔친 네 쌤들💛💙💚❤️
+        💛💙💚❤️
+        <br />
+        우리의 마음을 훔친 네 쌤들
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 justify-items-center py-12">
         {teachers.map((photo, index) => (
