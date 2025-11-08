@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "영원한 102기 뽀글즈🫧",
-  description: "뽀글 프로젝트",
+  title: "🫧102기 뽀글즈🫧",
+  description: "우리의 인연은 기차처럼 길게~ 칙칙폭폭~ 🫧🫧",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "영원한 102기 뽀글즈🫧",
-    description: "뽀글 프로젝트",
+    description: "우리의 인연은 기차처럼 길게~ 칙칙폭폭~ 🫧🫧",
     images: "/images/102.png",
   },
   twitter: {
