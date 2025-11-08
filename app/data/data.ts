@@ -44,9 +44,9 @@ export const teachers = [
   },
   {
     id: "goyo",
-    src: "/images/photos/3_고요쌤.png",
+    src: "/images/photos/3_고요쌤.gif",
     name: "고요쌤",
-    title: "차분함 속의 우아함, 스윙판의 백조 고요쌤 🕊️",
+    title: "차분함 속의 우아함, 스윙의 백조 고요쌤 🕊️",
   },
   {
     id: "juice",
